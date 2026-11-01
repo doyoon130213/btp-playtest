@@ -990,6 +990,7 @@
     setSlowLook(false);
     show(ui.alert, false);
     G.state = 'levelup';
+    updateHud(true);
     Snd.level();
     nextReward();
   }
@@ -1144,7 +1145,7 @@
     buildBackground();
     buildSprites();
     stage.classList.add('battle');
-    show(ui.pause, false); show(ui.hud, true); show(ui.perf, true); show(ui.shade, true); show(ui.bossBar, false); show(ui.alert, false);
+    show(ui.pause, false); show(ui.hud, true); show(ui.perf, G.mode === 'stress'); show(ui.shade, true); show(ui.bossBar, false); show(ui.alert, false);
     setAlarm(false);
     if (hooks.onRewardEnd) hooks.onRewardEnd(SK.list());
     ui.goal.textContent = G.mode === 'stress' ? '프레임 시험 중' : '목표 ' + fmt(CFG.CLOCK_END);
