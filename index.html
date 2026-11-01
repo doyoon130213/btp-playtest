@@ -1,0 +1,62 @@
+<meta charset="utf-8">
+<title>검은 해구 순찰대 프로토타입</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=IBM+Plex+Sans+KR:wght@500;600&family=Jua&display=swap">
+<link rel="stylesheet" href="style.css">
+
+<div id="app">
+  <div id="stage">
+    <canvas id="cv" aria-label="게임 화면"></canvas>
+    <div id="shade" hidden></div>
+    <div id="vignette"></div>
+
+    <div id="hud" hidden>
+      <div>
+        <div class="hud-tag"><span>내구도</span><b id="hpText">1,100</b></div>
+        <div class="bar"><i id="hpFill"></i></div>
+        <div id="hudSkills" aria-label="보유 스킬"></div>
+      </div>
+      <div class="hud-mid">
+        <div id="depth">수심 0m</div>
+        <div id="clock">00:00</div>
+        <div id="goal">목표 08:00</div>
+      </div>
+      <div>
+        <div class="hud-tag"><span>레벨</span><b id="lvText">1</b></div>
+        <div class="bar"><i id="xpFill"></i></div>
+        <button id="pauseBtn" type="button" aria-label="일시정지">일시정지</button>
+      </div>
+    </div>
+    <div id="perf" hidden></div>
+    <div id="coach" role="status"></div>
+    <div id="bossBar" hidden><b id="bossName"></b><div class="bar"><i id="bossFill"></i></div></div>
+    <div id="alert" role="status" hidden></div>
+    <div id="cards" hidden></div>
+
+    <section id="pausePanel" class="dim-panel" aria-label="일시정지" hidden>
+      <h2>일시정지</h2>
+      <p class="sub" id="pauseWhy">화면을 누르면 이어집니다.</p>
+      <div class="row">
+        <button id="pauseSound" class="btn btn-blue" type="button">소리 켜짐</button>
+        <button id="pauseQuit" class="btn btn-blue" type="button">그만하기</button>
+      </div>
+    </section>
+
+    <div id="shell"></div>
+    <div id="modal" hidden></div>
+    <div id="toast" role="status" hidden></div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="art-core.js"></script>
+<script src="art-pilot.js"></script>
+<script src="art-sub.js"></script>
+<script src="art-item.js"></script>
+<script src="art-gear-svg.js"></script>
+<script src="art-scene.js"></script>
+<script src="skills.js"></script>
+<script src="battle.js"></script>
+<script src="menu.js"></script>
